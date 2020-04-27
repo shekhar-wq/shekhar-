@@ -20,7 +20,6 @@ public class StudentsPage extends BasePage {
     @FindBy(xpath="//a[text()='Students']")
     WebElement studentsMenu;
 
-
     @FindBy(xpath = "/html/body/div/p/a")
     WebElement lnkCreateNew;
 
@@ -142,6 +141,7 @@ public class StudentsPage extends BasePage {
     public int getDeteleteButtonsSize(){
         return eDeleteButtons.size();
     }
+
     public void clickDeleteConfirm(){
         eDeleteConfirm.click();
     }

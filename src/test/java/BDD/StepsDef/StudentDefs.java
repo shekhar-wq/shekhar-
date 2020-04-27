@@ -69,14 +69,19 @@ public class StudentDefs extends BasePage {
     @Then("^Verify User added is listed on the student list$")
     public void verifyUserAddedIsListedOnTheStudentList() throws InterruptedException {
         //
-        String searchStudent="Sandesh";
+        String searchStudent="Nirman";
         byte count=0;
         List<String> students;
         students=studentsPage.getAllStudentsNameList();
         for(String eachStudent:students){
             System.out.println(eachStudent);
-            if(eachStudent.equals(searchStudent))
+            if(eachStudent.equals(searchStudent)) {
                 count++;
+            }
+            if(count>0)
+                break;
+            else
+                continue;
         }
         //if count >0, we found the user
         if(count!=0)

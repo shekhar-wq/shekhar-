@@ -2,6 +2,7 @@ package Base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.io.FileInputStream;
 import java.util.Properties;
@@ -30,7 +31,19 @@ import java.util.Properties;
                 System.setProperty("webdriver.chrome.driver","chromedriver.exe");
                 wd=new ChromeDriver();
             }
+            else if(browsername.equals("firefox")){
+                System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
+                //Create ChromeDriver instance
+                 wd = new FirefoxDriver();
+                //Open Browser
+            }
+            else{
+                System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+                wd=new ChromeDriver();
+            }
+
             wd.manage().window().maximize();
             wd.get("http://automationpractice.itsutra.com/");
+            //wd.get("http://localhost:41787/");
         }
     }
